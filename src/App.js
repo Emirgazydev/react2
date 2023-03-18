@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import {Route,Routes} from "react-router-dom";
+import Recipes from "./components/Recipes";
+import Hero from "./components/Hero";
+import Meat from "./components/Meat";
+import About from "./components/About";
+import Blog from "./components/Blog";
+import Support from "./components/Support";
+import Signin from "./components/Signin";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header/>
+        <Routes>
+          <Route path={"/"} element={ <Hero/> }/>
+          <Route path={"/recipes"} element={ <Recipes/> }/>
+          <Route path={"/meat"} element={ <Meat/> }/>
+          <Route path={"/about"} element={ <About/> }/>
+          <Route path={"/blog"} element={ <Blog/> }/>
+          <Route path={"/support"} element={ <Support/> }/>
+          <Route path={"/signin"} element={ <Signin/> }/>
+        </Routes>
+      <Footer/>
     </div>
   );
 }
